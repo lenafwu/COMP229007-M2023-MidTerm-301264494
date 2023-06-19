@@ -8,7 +8,7 @@ function requireAuth(req, res, next)
 {
     // check if the user is logged in
     
-    // ADD YOUR CODE HERE        
+    // TODO: ADD YOUR CODE HERE        
 
 }
 
