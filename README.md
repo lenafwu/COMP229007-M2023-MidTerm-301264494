@@ -1,6 +1,14 @@
 # COMP229.M2023.Midterm.Template
 
-COMP229.M2023 - Midterm Template
+COMP229.M2023 - Midterm
+Course name: Web Application Development
+Student name: Fengting Wu
+Student number: 301264494
+Date: June 20, 2023
+
+Project URL:
+https://comp229007-m2023-midterm-301264494.lenafwu.repl.co/
+Note: website could be slow to load due to free repl.it account
 
 Test account:
 Username: admin74
