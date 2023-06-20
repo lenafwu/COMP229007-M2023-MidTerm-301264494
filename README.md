@@ -2,6 +2,10 @@
 
 COMP229.M2023 - Midterm Template
 
+Test account:
+Username: admin74
+Password: 12345678
+
 6-20 Known issue:
 
 1. Cars drop down menu doesn't show:
