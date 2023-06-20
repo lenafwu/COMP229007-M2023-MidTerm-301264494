@@ -100,8 +100,14 @@ module.exports.signup = async function (req, res, next) {
 };
 
 module.exports.signout = function (req, res, next) {
-  req.logout();
-  res.redirect("/");
+  // fixed due to PassportJS update
+  req.logout((err) => {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }
+    return res.redirect("/");
+  });
 };
 
 module.exports.signin = function (req, res, next) {

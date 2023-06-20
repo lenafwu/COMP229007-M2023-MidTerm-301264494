@@ -16,3 +16,9 @@ Password: 12345678
 2. Sign up not working
    Problem: MongooseError: Model.prototype.save() no longer accepts a callback
    Fixed: controllers/user.js: updated to async function
+
+3. Sign out not working
+   Problem: Error: req#logout requires a callback function
+   at req.logout.req.logOut
+   Fixed: controllers/user.js: updated
+   Reference: https://stackoverflow.com/questions/72336177/error-reqlogout-requires-a-callback-function
