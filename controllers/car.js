@@ -37,24 +37,95 @@ module.exports.details = async (req, res, next) => {
 // Renders the Add form using the add_edit.ejs template
 module.exports.displayAddPage = (req, res, next) => {
   // TODO: ADD YOUR CODE HERE
+  res.render("cars/add_edit", {
+    title: "Add a new Car",
+    car: {
+      make: "",
+      model: "",
+      year: "",
+      kilometers: "",
+      doors: "",
+      seats: "",
+      color: "",
+      price: "",
+    },
+    userName: req.user ? req.user.username : "",
+  });
 };
 
 // Processes the data submitted from the Add form to create a new car
-module.exports.processAddPage = (req, res, next) => {
+module.exports.processAddPage = async (req, res, next) => {
   // TODO:  ADD YOUR CODE HERE
+  let { make, model, year, kilometers, doors, seats, color, price } = req.body;
+  try {
+    let newCar = await new CarModel({
+      make,
+      model,
+      year,
+      kilometers,
+      doors,
+      seats,
+      color,
+      price,
+    }).save();
+    res.redirect("/cars/list");
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 };
 
 // Gets a car by id and renders the Edit form using the add_edit.ejs template
-module.exports.displayEditPage = (req, res, next) => {
+module.exports.displayEditPage = async (req, res, next) => {
   // TODO: ADD YOUR CODE HERE
+  let id = req.params.id;
+  try {
+    let carToEdit = await CarModel.findById(id);
+    res.render("cars/add_edit", {
+      title: "Edit Car",
+      car: carToEdit,
+      userName: req.user ? req.user.username : "",
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 };
 
 // Processes the data submitted from the Edit form to update a car
-module.exports.processEditPage = (req, res, next) => {
+module.exports.processEditPage = async (req, res, next) => {
   // TODO: ADD YOUR CODE HERE
+  let id = req.params.id;
+  let { make, model, year, kilometers, doors, seats, color, price } = req.body;
+  try {
+    let carToEdit = await CarModel.findById(id);
+    if (carToEdit) {
+      carToEdit.make = make;
+      carToEdit.model = model;
+      carToEdit.year = year;
+      carToEdit.kilometers = kilometers;
+      carToEdit.doors = doors;
+      carToEdit.seats = seats;
+      carToEdit.color = color;
+      carToEdit.price = price;
+      await carToEdit.save();
+      res.redirect("/cars/list");
+    }
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 };
 
 // Deletes a car based on its id.
-module.exports.performDelete = (req, res, next) => {
+module.exports.performDelete = async (req, res, next) => {
   // TODO: ADD YOUR CODE HERE
+  let id = req.params.id;
+  try {
+    let carToDelete = await CarModel.findByIdAndDelete(id);
+    res.redirect("/cars/list");
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 };
