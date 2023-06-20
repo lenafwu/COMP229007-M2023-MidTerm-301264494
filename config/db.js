@@ -10,7 +10,6 @@ require("dotenv").config();
 const atlasDB = process.env.MONGODB_URL;
 
 // Do not expose your credentials in your code.
-// TODO: use env var for my db
 /* let atlasDB =
   "mongodb+srv://<username>:<passoword>@<cluster>/carstore?retryWrites=true&w=majority"; */
 

@@ -7,9 +7,10 @@
     <br />
     <div>
       <!-- ------------------------ -->
-      <!-- // TODO: Fix the ADD button below -->
+      <!-- // Fix the ADD button below -->
       <!-- ------------------------ -->
-      <a href="#" class="btn btn-primary align-self-end" role="button">
+      <!-- changed # to /cars/new -->
+      <a href="/cars/new" class="btn btn-primary align-self-end" role="button">
         <i class="fas fa-plus-circle"></i>
         Add a new Car
       </a>
@@ -54,7 +55,11 @@
             <!-- ------------------------- -->
             <!-- TODO: Fix the EDIT button below -->
             <!-- ------------------------- -->
-            <a href="#" class="btn btn-primary btn-sm">
+            <!-- changed # to /cars/edit/<%= CarsList[i]._id %> -->
+            <a
+              href="/cars/edit/<%= CarsList[i]._id %>"
+              class="btn btn-primary btn-sm"
+            >
               <i class="fas fa-pencil-alt"></i
             ></a>
           </td>
@@ -62,7 +67,10 @@
             <!-- --------------------------- -->
             <!-- TODO: Fix the DELETE button below -->
             <!-- --------------------------- -->
-            <a href="#" class="btn btn-danger btn-sm">
+            <a
+              href="/cars/delete/<%= CarsList[i]._id %>"
+              class="btn btn-danger btn-sm"
+            >
               <i class="fas fa-trash-alt"></i
             ></a>
           </td>
