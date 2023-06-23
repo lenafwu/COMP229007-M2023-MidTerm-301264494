@@ -1,5 +1,5 @@
 /* 
-db.js
+database connection: added my db credentials
 Fengting Wu
 #301264494
 Midterm test

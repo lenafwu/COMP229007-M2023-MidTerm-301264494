@@ -1,3 +1,10 @@
+<!-- 
+Header partial: fixed URL of buttons
+Student Name: Fengting Wu
+Student ID: 301264494
+Date: June 23, 2023
+-->
+
 <%- include ../partials/header.ejs %>
 
 <!-- Main Content -->
@@ -7,7 +14,7 @@
     <br />
     <div>
       <!-- ------------------------ -->
-      <!-- // Fix the ADD button below -->
+      <!-- // Fixed: the ADD button below -->
       <!-- ------------------------ -->
       <!-- changed # to /cars/new -->
       <a href="/cars/add" class="btn btn-primary align-self-end" role="button">
@@ -53,7 +60,7 @@
           </td>
           <td class="text-center">
             <!-- ------------------------- -->
-            <!-- Fix the EDIT button below -->
+            <!-- Fixed: the EDIT button below -->
             <!-- ------------------------- -->
             <!-- changed # to /cars/edit/<%= CarsList[i]._id %> -->
             <a
@@ -65,7 +72,7 @@
           </td>
           <td class="text-center">
             <!-- --------------------------- -->
-            <!-- TODO: Fix the DELETE button below -->
+            <!-- Fixed: Fix the DELETE button below -->
             <!-- --------------------------- -->
             <a
               href="/cars/delete/<%= CarsList[i]._id %>"

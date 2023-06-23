@@ -1,3 +1,10 @@
+/*
+Car Router: added authentication function to routes
+Student Name: Fengting Wu
+Student ID: 301264494
+Date: June 23, 2023
+*/
+
 var express = require("express");
 var router = express.Router();
 

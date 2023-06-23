@@ -1,3 +1,10 @@
+/*
+User Controller: updated sign up and sign out function
+Student Name: Fengting Wu
+Student ID: 301264494
+Date: June 23, 2023
+*/
+
 let User = require("../models/user");
 let passport = require("passport");
 
@@ -50,7 +57,7 @@ module.exports.renderSignup = function (req, res, next) {
   }
 };
 
-// FIXME: OK: change to async function which returns a promise so it works properly
+// change to async function which returns a promise so it works properly
 module.exports.signup = async function (req, res, next) {
   if (!req.user && req.body.password === req.body.password_confirm) {
     console.log("req.body: ", req.body);
